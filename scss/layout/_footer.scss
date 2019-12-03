@@ -1,0 +1,85 @@
+[id="footer"] {
+	padding: 50px 0;
+	background-color: $secondary;
+
+	.logo {
+		display: block;
+		margin-bottom: 30px;
+	}
+}
+
+address {
+	margin-bottom: 30px;
+	font-size: $font-size-base + 4px;
+	color: $white;
+}
+
+.footer-holder {
+	@include media('>=tablet') {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.footer-col {
+		@include media('>=tablet') {
+			width: 300px;
+		}
+	}
+}
+
+.contact-list {
+	@extend %listreset;
+	margin-bottom: 30px;
+
+	li {
+		margin-bottom: 10px;
+	}
+
+	a {
+		@include animate(color);
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		padding: 0 0 0 35px;
+		font-size: $font-size-base + 4px;
+		text-decoration: none;
+		color: $white;
+
+		&:hover {
+			color: $primary;
+		}
+
+		[class^="icon-"] {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+}
+
+.footer-social-list {
+	@extend %listreset;
+	font-size: $font-size-base + 4px;
+
+	li {
+		display: inline-block;
+		margin-right: 10px;
+	}
+
+	a {
+		@include animate(background-color);
+		@include size(50px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-decoration: none;
+		color: $white;
+		background-color: rgba($white, 0.1);
+		border-radius: 50%;
+
+		&:hover {
+			background-color: $primary;
+		}
+	}
+}
